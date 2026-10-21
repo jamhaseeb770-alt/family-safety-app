@@ -20,8 +20,6 @@
     <application
         android:allowBackup="false"
         android:label="Family Safety"
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher"
         android:theme="@style/Theme.FamilySafety">
 
         <activity android:name=".MainActivity" android:exported="true">
