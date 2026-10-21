@@ -22,6 +22,12 @@ object ApiClient {
                 conn.doOutput = true
                 conn.connectTimeout = 15000
                 conn.readTimeout = 15000
+                conn.setRequestProperty(
+                    "User-Agent",
+                    "Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Mobile Safari/537.36"
+                )
+                conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded")
+                conn.instanceFollowRedirects = true
 
                 val body = params.entries.joinToString("&") {
                     URLEncoder.encode(it.key, "UTF-8") + "=" + URLEncoder.encode(it.value, "UTF-8")
@@ -48,7 +54,7 @@ object ApiClient {
                     callback(false, null, json.optString("error", "Pairing failed"))
                 }
             } catch (e: Exception) {
-                callback(false, null, "Could not reach server. Check the server URL.")
+                callback(false, null, "Server response: ${response?.take(100)}")
             }
         }
     }
