@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var prefs: SharedPreferences
 
-    private val SERVER_BASE_URL = "https://freehbsolution.free.nf/family-safety-app/"
+    private val SERVER_BASE_URL = "https://freehbsolution.free.nf/"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
